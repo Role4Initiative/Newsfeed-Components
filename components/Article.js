@@ -88,11 +88,11 @@ const data = [
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
   },
   {
-    title: 'The Difficulties of Giving a F@$&',
+    title: 'The Difficulties of Giving a Speach',
     date: 'Eternity',
     firstParagraph: 'I',
     secondParagraph: 'Do Not',
-    thirdParagraph: 'Give A F@$&!',
+    thirdParagraph: 'Give Speaches!',
   }
 ];
 
