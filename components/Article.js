@@ -86,8 +86,60 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'The Difficulties of Giving a Speach',
+    date: 'Eternity',
+    firstParagraph: 'I',
+    secondParagraph: 'Do Not',
+    thirdParagraph: 'Give Speaches!',
   }
 ];
+
+const articlesDiv = document.querySelector('.articles');
+
+function articleMaker({ title, date, firstParagraph, secondParagraph, thirdParagraph }){
+  const article = document.createElement('div');
+  const artTitle = document.createElement('h2');
+  const artDate = document.createElement('p');
+  const par1 = document.createElement('p');
+  const par2 = document.createElement('p');
+  const par3 = document.createElement('p');
+  const expandBtn = document.createElement('span');
+
+  article.appendChild(artTitle);
+  article.appendChild(artDate);
+  article.appendChild(par1);
+  article.appendChild(par2);
+  article.appendChild(par3);
+  article.appendChild(expandBtn);
+
+  article.classList.add('article');
+  artDate.classList.add('date');
+  expandBtn.classList.add('expandButton');
+
+  
+  artTitle.textContent = title;
+  artDate.textContent = date;
+  par1.textContent = firstParagraph;
+  par2.textContent = secondParagraph;
+  par3.textContent = thirdParagraph;
+  expandBtn.textContent = '+';
+  
+  expandBtn.addEventListener('click', () =>{
+    article.classList.toggle('article-open');
+  })
+
+  return article
+}
+
+const articleData = data.map(boo => {
+  return articleMaker(boo);
+})
+articleData.forEach(bah => {
+  articlesDiv.appendChild(bah);
+})
+
 
 /*
   Step 1: Write a component called 'articleMaker' to create an article.
